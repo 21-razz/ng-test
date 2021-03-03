@@ -27,12 +27,11 @@ describe("LoginComponent", () => {
 
   describe("Login Function", () => {
 
-    it("should set error message if user credencial is invalid.", () => {
+    it("should set errorMsg variable if user credencial is invalid.", () => {
       component.username = "username123";
       component.password = "password123";
 
       component.login();
-      fixture.detectChanges();
 
       expect(component.errorMsg).toBe("Invalid username and password.");
     });
