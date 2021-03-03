@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
 
 import { LoginComponent } from "./login.component";
 
@@ -8,7 +10,11 @@ describe("LoginComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      imports: [
+        RouterTestingModule
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   });
@@ -19,7 +25,17 @@ describe("LoginComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
-    expect(component).toBeTruthy();
+  describe("Login Function", () => {
+
+    it("should set error message if user credencial is invalid.", () => {
+      component.username = "username123";
+      component.password = "password123";
+
+      component.login();
+      fixture.detectChanges();
+
+      expect(component.errorMsg).toBe("Invalid username and password.");
+    });
+
   });
 });

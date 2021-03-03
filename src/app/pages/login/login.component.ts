@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    if (this.username !== "admin" && this.password !== "password") {
+    if (this.username !== "admin" || this.password !== "password") {
       this.errorMsg = "Invalid username and password.";
       return;
     }
