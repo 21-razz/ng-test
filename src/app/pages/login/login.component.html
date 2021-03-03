@@ -1,0 +1,14 @@
+<div class="login-container">
+  <div class="login-form">
+    <div *ngIf="errorMsg" class="login--alert-error">{{ errorMsg }}</div>
+    <div class="input-item">
+      <label for="input-username">Username</label>
+      <input id="input-username" type="text" [(ngModel)]="username" autocomplete>
+    </div>
+    <div class="input-item">
+      <label for="input-password">Password</label>
+      <input id="input-password" type="password" [(ngModel)]="password" autocomplete>
+    </div>
+    <button type="button" class="login--button" (click)="login()">Login</button>
+  </div>
+</div>
