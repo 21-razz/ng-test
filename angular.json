@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "ng-test"
+  "defaultProject": "ng-test",
+  "cli": {
+    "analytics": false
+  }
 }
